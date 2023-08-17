@@ -1,15 +1,32 @@
-import classes from "./Searchbar.module.css";
-import { Helmet } from "react-helmet";
+import React from "react";
+import { useRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import searchBoxStyles from "./Searchbar.module.css";
 
-export default function () {
+function SearchBox() {
+  const inputRef = useRef(null);
+  const expandSearchBar = () => {
+    setTimeout(() => {
+      inputRef.current.focus();
+    }, 0);
+  };
   return (
-    <>
-      <div className={classes.container}>
-        <input className={classes.bar} type="text" name="bar" />
-        <button className={classes.button}>
-          <span className={classes.materialSymbol}>search</span>
-        </button>
-      </div>
-    </>
+    <div className={searchBoxStyles["search-box"]}>
+      <button
+        className={searchBoxStyles["btn-search"]}
+        onClick={expandSearchBar}
+      >
+        <FontAwesomeIcon icon={faSearch} />
+      </button>
+      <input
+        ref={inputRef}
+        type="text"
+        className={searchBoxStyles["input-search"]}
+        placeholder="Type to Search..."
+      />
+    </div>
   );
 }
+
+export default SearchBox;
