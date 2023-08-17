@@ -1,0 +1,35 @@
+/* Modal.module.css */
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modalContent {
+  background-color: #6b6969;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center; /* Center the content horizontally */
+  max-width: 70%; /* Limit the maximum width of the card content */
+  max-height: 80vh; /* Limit the maximum height of the card content */
+  overflow: auto; /*Add scrollbars if content overflows the modal*/
+  transform: scale(0.7);
+  transition: transform 0.3s ease-in-out;
+}
+
+.modalOverlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modalContent.active {
+  /* ... existing styles ... */
+  transform: scale(1);
+}

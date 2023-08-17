@@ -1,0 +1,14 @@
+.card {
+  cursor: pointer;
+  flex: 0 0 calc(15%); /* 25% width minus the gap */
+  background-color: #6b6969;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  height: 20vh;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
