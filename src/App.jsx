@@ -5,11 +5,17 @@ import CardList from "./components/CardList";
 import FetchRecipe from "./components/FetchRecipe";
 
 function App() {
+  const [fetchedData, setFetchedData] = useState(null);
+
+  const handleFetchedData = (data) => {
+    setFetchedData(data);
+  };
+  console.log(fetchedData);
   return (
     <>
+      {fetchedData === null && <FetchRecipe onDataFetch={handleFetchedData} />}
       <Searchbar />
-      <CardList />
-      <FetchRecipe />
+      <CardList recipesData={fetchedData} />
     </>
   );
 }
