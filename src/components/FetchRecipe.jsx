@@ -3,7 +3,19 @@ import { useEffect, useState } from "react";
 export default function FetchRecipe({ onDataFetch }) {
   const [imageSrc, setImageSrc] = useState(null);
   const categories = ["Vegetarian", "Chicken", "Seafood", "Dessert"];
-  // Fetching recipes  from apI
+  // Fetching recipes  from api
+  function getRandomRecipes(arr, count) {
+    const shuffledArray = arr.slice(); // Create a copy of the array
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [
+        shuffledArray[j],
+        shuffledArray[i],
+      ];
+    }
+    return shuffledArray.slice(0, count);
+  }
+
   useEffect(() => {
     async function fetchRecipes() {
       const catData = [];
@@ -11,12 +23,12 @@ export default function FetchRecipe({ onDataFetch }) {
         const response = await fetch(
           `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
         );
-        const resData = await response.json();
-        catData.push({ name: category, items: resData.meals });
+        const resData = await response.json(); // object with array of objects  {[{},{},{}]}
+        const randomMeals = getRandomRecipes(resData.meals, 6); //get 5 random meals to render
+
+        catData.push({ name: category, items: randomMeals });
       }
       onDataFetch(catData);
-      //console.log(resData);
-      //setImageSrc(resData.meals[0].strMealThumb);
     }
     fetchRecipes();
   }, []);

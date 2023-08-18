@@ -1,14 +1,41 @@
+.container {
+  flex: 0 0 calc(15%); /* 25% width minus the gap */
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Stack the items vertically */
+  align-items: center;
+  justify-content: flex-end; /* Push content to the bottom */
+}
+
 .card {
   cursor: pointer;
-  flex: 0 0 calc(15%); /* 25% width minus the gap */
   background-color: #6b6969;
   border: 1px solid #ccc;
   border-radius: 8px;
-  height: 20vh;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
+
+  overflow: hidden; /* Hide any overflowing content */
 }
 
 .card:hover {
   transform: translateY(-5px);
+}
+
+h2 {
+  padding: 10px; /* Add some padding */
+  text-align: center; /* Center the title text */
+}
+
+.card img {
+  /* Make the image responsive */
+
+  max-height: 100%;
+  max-width: 100%;
+
+  /* Control how the image fits within the container */
+  object-fit: contain; /* or object-fit: contain; based on your preference */
+
+  /* Add a border radius for rounded corners */
+  border-radius: 5px;
 }

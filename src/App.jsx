@@ -10,7 +10,7 @@ function App() {
   const handleFetchedData = (data) => {
     setFetchedData(data);
   };
-  console.log(fetchedData);
+  //console.log(fetchedData);
   return (
     <>
       {fetchedData === null && <FetchRecipe onDataFetch={handleFetchedData} />}
