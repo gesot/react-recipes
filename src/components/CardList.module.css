@@ -1,8 +1,57 @@
 .container {
-  margin-top: 2rem;
+  flex: 0 0 calc(15%); /* 25% width minus the gap */
+  text-align: center;
+  display: flex;
+  flex-direction: column; /* Stack the items vertically */
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0;
+}
+
+.category {
+  position: relative;
+  margin-bottom: 32px;
+  gap: 20px; /* Add spacing between cards */
   display: flex;
   flex-direction: row; /* Change to row */
-  flex-wrap: wrap; /* Allow cards to wrap to the next line */
   justify-content: space-between; /* Distribute cards evenly */
-  gap: 20px; /* Add spacing between cards */
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* Hide scrollbar in IE/Edge */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.category::-webkit-scrollbar {
+  display: none;
+}
+
+h2 {
+  align-items: center;
+}
+
+.buttonContainer {
+  position: absolute;
+  z-index: 2;
+  right: 0.8%;
+  bottom: 60%;
+}
+
+.navButton {
+  cursor: pointer;
+  background-color: transparent;
+  border: solid rgb(241, 241, 241);
+  height: 20px;
+  width: 20px;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.navButton:hover {
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
+  transform: rotate(-45deg) scale(1.15);
+  -webkit-transform: rotate(-45deg) scale(1.15);
 }

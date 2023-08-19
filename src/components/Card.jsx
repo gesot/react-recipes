@@ -16,10 +16,13 @@ export default function Card({ cardTitle, cardImg }) {
   return (
     <>
       <div className={classes.container}>
-        {cardTitle && <h2>{cardTitle.split(" ").slice(0, 3).join(" ")}</h2>}
+        {/* {cardTitle && <h2>{cardTitle.split(" ").slice(0, 3).join(" ")}</h2>} */}
         <div className={classes.card} onClick={openModal}>
-          <img src={cardImg} alt="An image"></img>
+          <div className={classes.imageContainer}>
+            <img src={cardImg} alt="An image"></img>
+          </div>
         </div>
+        <h3>{cardTitle}</h3>
       </div>
 
       {isModalOpen && <Modal handler={closeModal} />}
