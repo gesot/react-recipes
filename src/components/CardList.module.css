@@ -1,3 +1,7 @@
+.listButton {
+  position: relative;
+}
+
 .container {
   flex: 0 0 calc(15%); /* 25% width minus the gap */
   text-align: center;
@@ -32,10 +36,10 @@ h2 {
   position: absolute;
   z-index: 2;
   right: 0.8%;
-  bottom: 60%;
+  bottom: 57%;
 }
 
-.navButton {
+.navButtonRight {
   cursor: pointer;
   background-color: transparent;
   border: solid rgb(241, 241, 241);
@@ -48,7 +52,7 @@ h2 {
   -webkit-transform: rotate(-45deg);
 }
 
-.navButton:hover {
+.navButtonLeft:hover {
   background-color: transparent;
   color: #fff;
   border-color: #fff;

@@ -26,7 +26,7 @@ export default function FetchRecipe({ onDataFetch }) {
           `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`
         );
         const resData = await response.json(); // object with array of objects  {[{},{},{}]}
-        const randomMeals = getRandomRecipes(resData.meals, 7); //get 5 random meals to render
+        const randomMeals = getRandomRecipes(resData.meals, 10); //get 5 random meals to render
 
         catData.push({ name: category, items: randomMeals });
       }

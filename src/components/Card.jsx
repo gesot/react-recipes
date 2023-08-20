@@ -2,7 +2,7 @@ import classes from "./Card.module.css";
 import { useState } from "react";
 import Modal from "./Modal";
 
-export default function Card({ cardTitle, cardImg }) {
+export default function Card({ mealId, cardTitle, cardImg }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -12,7 +12,6 @@ export default function Card({ cardTitle, cardImg }) {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-
   return (
     <>
       <div className={classes.container}>
@@ -25,7 +24,7 @@ export default function Card({ cardTitle, cardImg }) {
         <h3>{cardTitle}</h3>
       </div>
 
-      {isModalOpen && <Modal handler={closeModal} />}
+      {isModalOpen && <Modal handler={closeModal} id={mealId} />}
     </>
   );
 }
