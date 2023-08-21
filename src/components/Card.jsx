@@ -17,9 +17,7 @@ export default function Card({ mealId, cardTitle, cardImg }) {
       <div className={classes.container}>
         {/* {cardTitle && <h2>{cardTitle.split(" ").slice(0, 3).join(" ")}</h2>} */}
         <div className={classes.card} onClick={openModal}>
-          <div className={classes.imageContainer}>
-            <img src={cardImg} alt="An image"></img>
-          </div>
+          <img src={cardImg} alt="An image"></img>
         </div>
         <h3>{cardTitle}</h3>
       </div>

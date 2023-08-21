@@ -32,14 +32,11 @@ h2 {
   align-items: center;
 }
 
-.buttonContainer {
+.navButtonRight {
   position: absolute;
   z-index: 2;
-  right: 0.8%;
-  bottom: 57%;
-}
-
-.navButtonRight {
+  right: -1.4%;
+  bottom: 60%;
   cursor: pointer;
   background-color: transparent;
   border: solid rgb(241, 241, 241);
@@ -52,10 +49,35 @@ h2 {
   -webkit-transform: rotate(-45deg);
 }
 
-.navButtonLeft:hover {
+.navButtonRight:hover {
   background-color: transparent;
   color: #fff;
   border-color: #fff;
   transform: rotate(-45deg) scale(1.15);
   -webkit-transform: rotate(-45deg) scale(1.15);
+}
+
+.navButtonLeft {
+  position: absolute;
+  z-index: 2;
+  right: 100.5%;
+  bottom: 60%;
+  cursor: pointer;
+  background-color: transparent;
+  border: solid rgb(241, 241, 241);
+  height: 20px;
+  width: 20px;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.navButtonLeft:hover {
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
+  transform: rotate(135deg) scale(1.15);
+  -webkit-transform: rotate(135deg) scale(1.15);
 }

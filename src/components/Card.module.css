@@ -1,4 +1,5 @@
 .container {
+  margin-top: 10px;
   flex: 0 0 calc(15%); /* 25% width minus the gap */
   text-align: center;
   display: flex;
@@ -7,10 +8,6 @@
 }
 
 .card {
-  overflow: hidden; /* Hide any overflowing content */
-}
-
-.imageContainer {
   cursor: pointer;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -21,13 +18,14 @@
   max-height: 100%;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
-
 .card img {
   max-height: 100%;
   max-width: 100%;
   object-fit: cover; /* or object-fit: contain; based on your preference */
   border-radius: 8px; /* Match the radius of the image container */
+}
+
+.card:hover {
+  overflow: visible;
+  transform: translateY(-5px);
 }
