@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function Modal({ handler, id }) {
   const [fetchedInfo, setFetchedInfo] = useState(null);
+  const ingredients = [];
   useEffect(() => {
     async function fetchInfo() {
       const idRes = await fetch(
@@ -14,7 +15,16 @@ export default function Modal({ handler, id }) {
     }
     fetchInfo();
   }, []);
-  console.log(fetchedInfo);
+  if (fetchedInfo) console.log(fetchedInfo);
+  if (fetchedInfo) {
+    for (let i = 1; i < 21; i++) {
+      let ingr = `strIngredient${i}`;
+      let meas = `strMeasure${i}`;
+      ingredients[
+        i
+      ] = `${fetchedInfo.meals[0][meas]}${fetchedInfo.meals[0][ingr]}`;
+    }
+  }
   return (
     <div className={classes.modalOverlay} onClick={handler}>
       <div
@@ -24,7 +34,7 @@ export default function Modal({ handler, id }) {
         <h2>Title of the card</h2>
         <img src="" alt="An image"></img>
         <p></p>
-        {fetchedInfo && <p>{fetchedInfo.meals[0].strIngredient1}</p>}
+        {fetchedInfo && <p>{ingredients}</p>}
       </div>
     </div>
   );
