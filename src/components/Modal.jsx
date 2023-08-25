@@ -22,7 +22,8 @@ export default function Modal({ handler, id }) {
       let meas = `strMeasure${i}`;
       ingredients[
         i
-      ] = `${fetchedInfo.meals[0][meas]}${fetchedInfo.meals[0][ingr]}`;
+      ] = `${fetchedInfo.meals[0][meas]} ${fetchedInfo.meals[0][ingr]}`;
+      ingredients[i] = ingredients[i].trim();
     }
   }
   return (
@@ -31,10 +32,30 @@ export default function Modal({ handler, id }) {
         className={classes.modalContent}
         onClick={(e) => e.stopPropagation()}
       >
-        <h2>Title of the card</h2>
-        <img src="" alt="An image"></img>
-        <p></p>
-        {fetchedInfo && <p>{ingredients}</p>}
+        <div className={classes.modalImgIng}>
+          <div className={classes.titImg}>
+            {fetchedInfo && <h3>{fetchedInfo.meals[0].strMeal}</h3>}
+            {fetchedInfo && (
+              <img
+                className={classes.modalImage}
+                src={fetchedInfo.meals[0].strMealThumb}
+                alt="An image"
+              ></img>
+            )}
+          </div>
+          <div className={classes.titImg}>
+            <h3>Ingredients:</h3>
+            {fetchedInfo && (
+              <ul>
+                {ingredients.map(
+                  (ingredient, index) =>
+                    ingredient != "" &&
+                    ingredient != null && <li key={index}>{ingredient}</li>
+                )}
+              </ul>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

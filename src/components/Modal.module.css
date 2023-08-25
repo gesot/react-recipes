@@ -1,6 +1,7 @@
 /* Modal.module.css */
 
 .modalOverlay {
+  z-index: 3;
   position: fixed;
   top: 0;
   left: 0;
@@ -13,11 +14,44 @@
 }
 .modalContent {
   background-color: #6b6969;
-  border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
   max-width: 70%;
-  max-height: 80vh;
-  overflow: auto;
+  max-height: 100vh;
+}
+
+.modalImage {
+  max-height: 40vh; /* Decrease max-height of the image */
+  margin-bottom: 16px; /* Add spacing below the image */
+  border-radius: 8px;
+}
+
+.modalTitle {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.modalImgIng {
+  display: flex; /* Display list items horizontally */
+}
+
+h3 {
+  margin: 10px;
+}
+
+ul {
+  /* Style for the <ul> element */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 15px;
+}
+
+li {
+  padding: 8px 16px;
+  background-color: #5f4c4c;
+  border-radius: 8px;
+  margin-right: 8px; /* Add spacing between items */
+  white-space: nowrap; /* Prevent wrapping of individual items */
 }
