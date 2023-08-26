@@ -13,13 +13,14 @@
   justify-content: center;
 }
 .modalContent {
-  background-color: #6b6969;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #494747;
+  border: 1px solid #797575; /* Add a border around the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 20px;
   text-align: center;
-  max-width: 50%;
-  max-height: 100vh;
-  overflow: scroll;
+  max-width: 40%;
+  max-height: 70vh;
+  overflow: auto; /* Use scroll instead of auto */
 }
 
 .modalImage {
@@ -28,13 +29,9 @@
   border-radius: 8px;
 }
 
-.modalTitle {
-  display: flex;
-  justify-content: space-evenly;
-}
-
 .modalImgIng {
   display: flex; /* Display list items horizontally */
+  justify-content: space-around;
 }
 
 .titImg {
@@ -43,24 +40,33 @@
 }
 h3 {
   margin: 10px;
+  text-decoration: underline;
 }
 
 p {
-  margin: 0px;
+  font-size: 18px; /* Increase font size for readability */
+  line-height: 1.6; /* Increase line height for better spacing between lines */
+  margin: 0;
+  max-width: 90%; /* Limit the width to 50% of the parent */
+  text-align: justify;
+  position: relative; /* Set positioning context for the paragraph */
+  left: 50%; /* Move the paragraph halfway from the left edge */
+  transform: translateX(
+    -50%
+  ); /* Center the paragraph
 }
 
 ul {
   /* Style for the <ul> element */
-  list-style: none;
+  list-style-type: disc;
   padding: 0;
   margin: 0;
-  margin-left: 15px;
+  text-align: left;
 }
 
 li {
-  padding: 8px 16px;
-  background-color: #5f4c4c;
-  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 8px;
   margin-right: 8px; /* Add spacing between items */
   white-space: nowrap; /* Prevent wrapping of individual items */
 }
