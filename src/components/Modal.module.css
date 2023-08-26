@@ -17,8 +17,9 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
-  max-width: 70%;
+  max-width: 50%;
   max-height: 100vh;
+  overflow: scroll;
 }
 
 .modalImage {
@@ -36,8 +37,16 @@
   display: flex; /* Display list items horizontally */
 }
 
+.titImg {
+  display: flex;
+  flex-direction: column;
+}
 h3 {
   margin: 10px;
+}
+
+p {
+  margin: 0px;
 }
 
 ul {

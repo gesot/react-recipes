@@ -42,6 +42,8 @@ export default function Modal({ handler, id }) {
                 alt="An image"
               ></img>
             )}
+            <h3>Instructions:</h3>
+            {fetchedInfo && <p>{fetchedInfo.meals[0].strInstructions}</p>}
           </div>
           <div className={classes.titImg}>
             <h3>Ingredients:</h3>
@@ -50,6 +52,7 @@ export default function Modal({ handler, id }) {
                 {ingredients.map(
                   (ingredient, index) =>
                     ingredient != "" &&
+                    ingredient != "null null" &&
                     ingredient != null && <li key={index}>{ingredient}</li>
                 )}
               </ul>
