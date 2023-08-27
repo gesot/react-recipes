@@ -3,6 +3,7 @@ import "./App.css";
 import Searchbar from "./components/Searchbar";
 import CardList from "./components/CardList";
 import FetchRecipe from "./components/FetchRecipe";
+import CardMap from "./components/CardMap";
 
 function App() {
   const [fetchedData, setFetchedData] = useState(null);
@@ -15,7 +16,7 @@ function App() {
     <>
       {fetchedData === null && <FetchRecipe onDataFetch={handleFetchedData} />}
       <Searchbar />
-      <CardList recipesData={fetchedData} />
+      <CardMap rData={fetchedData} />
     </>
   );
 }
