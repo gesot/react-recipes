@@ -16,7 +16,9 @@ export default function Modal({ handler, id }) {
     fetchInfo();
   }, []);
   if (fetchedInfo) console.log(fetchedInfo);
+  //ingridients[i] = 'MEASURE INGREDIENT'  i.e '4 eggs'
   if (fetchedInfo) {
+    // Max Ingredients = 20 .
     for (let i = 1; i < 21; i++) {
       let ingr = `strIngredient${i}`;
       let meas = `strMeasure${i}`;

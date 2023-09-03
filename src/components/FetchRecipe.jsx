@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function FetchRecipe({ onDataFetch }) {
   const [imageSrc, setImageSrc] = useState(null);
+  //Categories to be rendered
   const categories = ["Vegetarian", "Chicken", "Seafood", "Dessert"];
 
   //Shuffle and get 5 random meals

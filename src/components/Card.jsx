@@ -21,7 +21,6 @@ export default function Card({ mealId, cardTitle, cardImg }) {
         </div>
         <h3>{cardTitle}</h3>
       </div>
-
       {isModalOpen && <Modal handler={closeModal} id={mealId} />}
     </>
   );
